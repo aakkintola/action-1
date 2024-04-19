@@ -3,7 +3,7 @@ name: Generate ASCII Artwork
 on: push
 
 jobs:
-    first_job:
+    build_job_1:
         runs-on: ubuntu-latest
         steps:
 
@@ -17,3 +17,27 @@ jobs:
           run: |
             chmod +x ascii-script.sh
             ./ascii-script.sh
+
+    test_job_2:
+        runs-on: ubuntu-latest
+        steps:
+        - name: sleep for 10 seconds
+          uses: sleep 10
+
+        - name: Test File Exists 
+          run: grep -i "dragon" dragon.txt
+
+        - name: Excecuting Shell Script
+          run: |
+            chmod +x ascii-script.sh
+            ./ascii-script.sh           
+
+    deply_job_3:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Read File
+          run: cat dragon.txt
+        - name: Deploy
+          run: echo Deploying ... .. .
+                 
+       
