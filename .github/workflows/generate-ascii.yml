@@ -8,7 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Install Cowsay Program
-          uses: sudo apt-get install cowsay -y
+          run: sudo apt-get install cowsay -y
 
         - name: Excecute Cowsay CMD
           run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
@@ -20,7 +20,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: sleep for 10 seconds
-          uses: sleep 10
+          run: sleep 10
 
         - name: Test File Exists 
           run: grep -i "dragon" dragon.txt
